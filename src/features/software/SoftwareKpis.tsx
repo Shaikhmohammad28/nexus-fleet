@@ -71,11 +71,11 @@ export const SoftwareKpis: React.FC = () => {
   return (
     <div className="mb-6 space-y-4">
       {/* Month & Year Selectors Bar */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-white dark:bg-[#1E293B] p-3.5 rounded-2xl border border-gray-200 dark:border-gray-800 shadow-xs">
-        <div className="flex items-center gap-2 text-xs font-semibold text-gray-700 dark:text-gray-300">
-          <Calendar className="w-4 h-4 text-indigo-600" />
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 bg-white dark:bg-[#111726] p-3 rounded-2xl border border-slate-200/80 dark:border-slate-800 shadow-xs">
+        <div className="flex items-center gap-2 text-xs font-semibold text-slate-700 dark:text-slate-300">
+          <Calendar className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
           <span>Accounting Period:</span>
-          <span className="text-gray-900 dark:text-white font-bold">
+          <span className="text-slate-900 dark:text-white font-bold">
             {MONTHS[selectedMonth]} {selectedYear}
           </span>
         </div>
@@ -84,7 +84,7 @@ export const SoftwareKpis: React.FC = () => {
           <select
             value={selectedMonth}
             onChange={(e) => setSelectedMonthYear(Number(e.target.value), selectedYear)}
-            className="px-3 py-1.5 text-xs bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-gray-800 dark:text-gray-200 focus:ring-2 focus:ring-indigo-500"
+            className="h-9 px-3 text-xs font-medium bg-white dark:bg-[#111726] border border-slate-200/90 dark:border-slate-800 rounded-xl text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-indigo-500 shadow-xs cursor-pointer"
           >
             {MONTHS.map((m, idx) => (
               <option key={m} value={idx}>
@@ -96,7 +96,7 @@ export const SoftwareKpis: React.FC = () => {
           <select
             value={selectedYear}
             onChange={(e) => setSelectedMonthYear(selectedMonth, Number(e.target.value))}
-            className="px-3 py-1.5 text-xs bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-gray-800 dark:text-gray-200 focus:ring-2 focus:ring-indigo-500"
+            className="h-9 px-3 text-xs font-medium bg-white dark:bg-[#111726] border border-slate-200/90 dark:border-slate-800 rounded-xl text-slate-800 dark:text-slate-200 focus:ring-2 focus:ring-indigo-500 shadow-xs cursor-pointer"
           >
             {[2025, 2026, 2027].map((y) => (
               <option key={y} value={y}>
@@ -108,7 +108,7 @@ export const SoftwareKpis: React.FC = () => {
       </div>
 
       {/* KPI Cards Row (Static, No flip, Tooltips with definitions) */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 items-stretch">
         {/* 1. Monthly Spend */}
         <KpiCard
           title="Monthly spend"

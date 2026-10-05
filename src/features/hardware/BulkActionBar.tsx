@@ -67,13 +67,13 @@ export const BulkActionBar: React.FC<BulkActionBarProps> = ({ totalMatching }) =
 
   return (
     <>
-      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 bg-gray-900/95 dark:bg-[#1E293B]/95 text-white backdrop-blur-md px-5 py-3 rounded-2xl shadow-2xl border border-gray-700/60 flex flex-wrap items-center gap-3 sm:gap-4 text-xs animate-in slide-in-from-bottom-5 duration-200">
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 bg-slate-900/95 dark:bg-[#111726]/95 text-white backdrop-blur-md px-4 py-2.5 rounded-2xl shadow-2xl border border-slate-700/80 flex flex-wrap items-center gap-2.5 sm:gap-3 text-xs animate-in slide-in-from-bottom-5 duration-200">
         {/* Count & Select all link */}
-        <div className="flex items-center gap-2 border-r border-gray-700 pr-3">
+        <div className="flex items-center gap-2 border-r border-slate-700/80 pr-3">
           <span className="font-semibold text-white bg-indigo-600 px-2 py-0.5 rounded-full text-[11px]">
             {count}
           </span>
-          <span className="font-medium text-gray-200">selected</span>
+          <span className="font-medium text-slate-200">selected</span>
           {count < totalMatching && (
             <button
               onClick={handleSelectAllMatching}
@@ -87,7 +87,7 @@ export const BulkActionBar: React.FC<BulkActionBarProps> = ({ totalMatching }) =
         {/* Action: Assign */}
         <button
           onClick={() => openAssignModal({ assetId: selectedAssetIds[0] })}
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-200 hover:text-white rounded-lg transition-colors border border-gray-700"
+          className="h-8 flex items-center gap-1.5 px-3 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white rounded-xl transition-all border border-slate-700 text-xs font-semibold"
         >
           <UserCheck className="w-3.5 h-3.5 text-indigo-400" />
           <span>Assign to...</span>
@@ -97,14 +97,14 @@ export const BulkActionBar: React.FC<BulkActionBarProps> = ({ totalMatching }) =
         <div className="relative">
           <button
             onClick={() => setIsFamilyDropdownOpen(!isFamilyDropdownOpen)}
-            className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-200 hover:text-white rounded-lg transition-colors border border-gray-700"
+            className="h-8 flex items-center gap-1.5 px-3 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white rounded-xl transition-all border border-slate-700 text-xs font-semibold"
           >
             <span>Set product family</span>
-            <ChevronDown className="w-3 h-3 text-gray-400" />
+            <ChevronDown className="w-3 h-3 text-slate-400" />
           </button>
 
           {isFamilyDropdownOpen && (
-            <div className="absolute bottom-full mb-2 left-0 w-36 bg-gray-900 border border-gray-700 rounded-xl shadow-xl py-1 z-50 animate-in fade-in">
+            <div className="absolute bottom-full mb-2 left-0 w-36 bg-slate-900 border border-slate-700 rounded-xl shadow-xl py-1 z-50 animate-in fade-in">
               {(['Mac', 'Windows', 'Monitor', 'Other'] as ProductFamily[]).map((fam) => (
                 <button
                   key={fam}
@@ -112,7 +112,7 @@ export const BulkActionBar: React.FC<BulkActionBarProps> = ({ totalMatching }) =
                     bulkSetFamily(fam);
                     setIsFamilyDropdownOpen(false);
                   }}
-                  className="w-full text-left px-3.5 py-1.5 text-xs text-gray-300 hover:text-white hover:bg-gray-800"
+                  className="w-full text-left px-3.5 py-1.5 text-xs text-slate-300 hover:text-white hover:bg-slate-800"
                 >
                   {fam}
                 </button>
@@ -124,7 +124,7 @@ export const BulkActionBar: React.FC<BulkActionBarProps> = ({ totalMatching }) =
         {/* Action: Mark In Repair */}
         <button
           onClick={bulkMarkInRepair}
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-200 hover:text-white rounded-lg transition-colors border border-gray-700"
+          className="h-8 flex items-center gap-1.5 px-3 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white rounded-xl transition-all border border-slate-700 text-xs font-semibold"
         >
           <Wrench className="w-3.5 h-3.5 text-amber-400" />
           <span>Mark in repair</span>
@@ -133,25 +133,25 @@ export const BulkActionBar: React.FC<BulkActionBarProps> = ({ totalMatching }) =
         {/* Action: Export */}
         <button
           onClick={handleExportSelected}
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-gray-800 hover:bg-gray-700 text-gray-200 hover:text-white rounded-lg transition-colors border border-gray-700"
+          className="h-8 flex items-center gap-1.5 px-3 bg-slate-800 hover:bg-slate-700 text-slate-200 hover:text-white rounded-xl transition-all border border-slate-700 text-xs font-semibold"
         >
-          <Download className="w-3.5 h-3.5" />
+          <Download className="w-3.5 h-3.5 text-slate-400" />
           <span>Export selected</span>
         </button>
 
         {/* Action: Delete */}
         <button
           onClick={() => setIsConfirmDeleteOpen(true)}
-          className="flex items-center gap-1.5 px-3 py-1.5 bg-red-950/60 hover:bg-red-900/80 text-red-300 hover:text-red-200 rounded-lg transition-colors border border-red-800/60"
+          className="h-8 flex items-center gap-1.5 px-3 bg-rose-950/60 hover:bg-rose-900/80 text-rose-300 hover:text-rose-200 rounded-xl transition-all border border-rose-800/60 text-xs font-semibold"
         >
-          <Trash2 className="w-3.5 h-3.5 text-red-400" />
+          <Trash2 className="w-3.5 h-3.5 text-rose-400" />
           <span>Delete</span>
         </button>
 
         {/* Clear selection */}
         <button
           onClick={clearSelection}
-          className="p-1.5 text-gray-400 hover:text-gray-200 ml-1 rounded-lg hover:bg-gray-800 transition-colors"
+          className="h-8 w-8 flex items-center justify-center text-slate-400 hover:text-slate-200 rounded-xl hover:bg-slate-800 transition-colors"
           title="Clear selection"
         >
           <X className="w-4 h-4" />
