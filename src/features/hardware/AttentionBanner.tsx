@@ -61,7 +61,7 @@ export const AttentionBanner: React.FC = () => {
         <div className="flex items-center gap-2.5 w-full lg:w-auto shrink-0 justify-end">
           <button
             onClick={() => setActiveSavedViewId('view-missing')}
-            className="flex items-center gap-1.5 px-3.5 py-2 text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white/90 dark:bg-slate-800/90 hover:bg-white dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-xl transition-all shadow-xs"
+            className="h-9 flex items-center gap-1.5 px-3.5 text-xs font-semibold text-slate-700 dark:text-slate-200 bg-white/90 dark:bg-slate-800/90 hover:bg-white dark:hover:bg-slate-700 border border-slate-200 dark:border-slate-700 rounded-xl transition-all shadow-xs"
           >
             <Filter className="w-3.5 h-3.5 text-slate-500" />
             <span>Review manually</span>
@@ -69,7 +69,7 @@ export const AttentionBanner: React.FC = () => {
 
           <button
             onClick={() => setAutoCategorizeModalOpen(true)}
-            className="flex items-center gap-1.5 px-4 py-2 text-xs font-semibold text-white bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 rounded-xl shadow-md shadow-amber-500/20 transition-all focus:ring-2 focus:ring-amber-500"
+            className="h-9 flex items-center gap-1.5 px-4 text-xs font-semibold text-white bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 rounded-xl shadow-md shadow-amber-500/20 transition-all focus:ring-2 focus:ring-amber-500"
           >
             <Zap className="w-3.5 h-3.5" />
             <span>Auto-categorize All</span>
@@ -77,7 +77,7 @@ export const AttentionBanner: React.FC = () => {
 
           <button
             onClick={() => setDismissAutoCategorizeBanner(true)}
-            className="p-2 text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-lg hover:bg-white/60 dark:hover:bg-slate-800/60 transition-colors"
+            className="h-9 w-9 flex items-center justify-center text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 rounded-xl hover:bg-white/60 dark:hover:bg-slate-800/60 transition-colors"
             title="Dismiss banner"
             aria-label="Dismiss banner"
           >

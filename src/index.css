@@ -9,6 +9,15 @@
 }
 
 /* Custom scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #CBD5E1 transparent;
+}
+
+.dark * {
+  scrollbar-color: #334155 transparent;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
   height: 6px;
@@ -16,6 +25,7 @@
 
 ::-webkit-scrollbar-track {
   background: transparent;
+  margin: 4px;
 }
 
 ::-webkit-scrollbar-thumb {
